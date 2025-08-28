@@ -5,117 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Bricks Unchained – Splash‑Page</title>
   <meta name="description" content="Bricks Unchained – Einzelsteine, Sets & Minifiguren." />
-  <meta name="theme-color" content="#D49A00" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#ffffff" />
   <style>
     :root {
-      --yellow: #D49A00;
-      --red:    #C33A2B;
-      --ink:    #2F3A32;
-      --cream:  #F2E7C9;
-      --paper:  #FFF9EC;
-      --radius: 16px;
+      --ink:    #2F3A32; /* dunkles Grün/Graphit aus dem Logo */
+      --red:    #C33A2B; /* Ziegel‑Rot */
+      --yellow: #D49A00; /* Senf‑Gelb */
+      --text:   #1b1b1b;
+      --muted:  #6b7280;
+      --line:   #eaecef;
+      --radius: 14px;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--yellow);color:#16130B;text-align:center}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,92%);margin:0 auto}
-
-    .hero{padding:48px 0 28px}
-    .hero h1{font-size:clamp(22px,4vw,36px);margin:0 0 10px;color:#1b1408}
-    .hero img{width:120px;height:auto;border-radius:20px;border:2px solid #1b1408;box-shadow:0 6px 0 #1b1408;margin:10px 0}
-    .hero p{margin:0 0 18px;color:#2F3A32;font-size:18px}
-
-    .section{padding:16px 0}
-    .section h2{margin:0 0 10px;font-size:22px}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .card{background:var(--red);color:#fff;border:2px solid #1b1408;border-radius:var(--radius);padding:16px;display:flex;align-items:center;justify-content:center;font-weight:900;min-height:84px}
-
-    .contact{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
-    .contact .card a{font-weight:800;color:#fff}
-    .contact .card{background:var(--red);color:#fff;border:2px solid #1b1408;border-radius:var(--radius);padding:16px}
-
-    .hinweise-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:20px;text-align:left}
-    .hinweise{background:var(--paper);border:2px solid #1b1408;border-radius:var(--radius);padding:18px;color:#1b1408}
-    .hinweise h2{margin-top:0;font-size:20px}
-    .hinweise ul{margin:0;padding-left:0;list-style:none}
-    .hinweise li{margin-bottom:8px;display:flex;align-items:flex-start;gap:8px}
-    .hinweise li::before{content:"⚡";color:var(--red);font-weight:bold;}
-
-    footer{border-top:2px solid #1b1408;margin-top:30px}
-    .foot{display:flex;justify-content:space-between;align-items:center;padding:14px 0;color:#1b1408;font-size:14px}
-
-    @media (max-width:920px){
-      .hinweise-wrapper{grid-template-columns:1fr}
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: #fff; /* clean white */
+      color: var(--text);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
     }
-    @media (max-width:860px){
-      .cards,.contact{grid-template-columns:1fr 1fr}
-    }
-    @media (max-width:560px){
-      .cards,.contact{grid-template-columns:1fr}
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(980px, 92%); margin: 0 auto; }
+
+    /* Subtile Akzente */
+    .topbar { height: 4px; background: linear-gradient(90deg, var(--yellow), var(--red)); }
+
+    /* Hero */
+    .hero { text-align: center; padding: 56px 0 28px; }
+    .hero .eyebrow { display:inline-block; padding: 6px 10px; font-weight: 800; font-size: 12px; color: var(--ink); border: 1px solid var(--line); border-radius: 999px; background: #fff; }
+    .hero h1 { margin: 12px 0 14px; font-size: clamp(26px, 4.2vw, 44px); color: var(--ink); letter-spacing: .2px; }
+    .hero img { width: 140px; height: auto; border-radius: 18px; border: 1px solid var(--line); box-shadow: 0 6px 18px rgba(0,0,0,.05); margin: 10px 0; }
+    .hero p { margin: 10px auto 0; color: var(--muted); max-width: 720px; }
+
+    /* Section */
+    .section { padding: 26px 0; }
+    .section h2 { margin: 0 0 12px; font-size: 20px; color: var(--ink); }
+
+    /* Karten-Layout */
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 18px; color: var(--ink); display:flex; align-items:center; gap:8px; }
+    .card h3 .dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+    .card h3 .dot.red { background: var(--red); }
+    .card h3 .dot.yellow { background: var(--yellow); }
+    .list { list-style: none; padding: 0; margin: 0; }
+    .list li { display:flex; gap:8px; align-items:flex-start; margin: 6px 0; color: var(--text); }
+    .list li .zap { font-weight: 900; color: var(--red); line-height: 1; }
+    .list li .check { font-weight: 900; color: var(--ink); line-height: 1; }
+
+    /* Kontakt */
+    .k-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .k-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; font-weight: 700; color: var(--ink); }
+    .k-card a { font-weight: 800; text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 3px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+    .foot { display:flex; justify-content: space-between; align-items: center; padding: 16px 0 40px; }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .grid, .k-grid { grid-template-columns: 1fr; }
+      .hero img { width: 120px; }
     }
   </style>
 </head>
 <body>
+  <div class="topbar" aria-hidden="true"></div>
   <main class="container">
-    <section class="hero">
-      <h1>Herzlich Willkommen bei</h1>
-      <img src="logo.png" alt="Bricks Unchained Logo" width="160" height="160" style="border-radius:20px;border:2px solid #1b1408;box-shadow:0 6px 0 #1b1408;margin:10px 0;">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="eyebrow">Herzlich Willkommen bei</span>
+      <h1 id="hero-title">Bricks Unchained</h1>
+      <!-- Logo-URL hier eintragen: ersetze YOUR_LOGO_URL -->
+      <img src="YOUR_LOGO_URL" alt="Bricks Unchained Logo" />
+      <p>Einzelsteine, Sets & Minifiguren – fair bepreist, sorgfältig sortiert und schnell versendet aus Deutschland.</p>
     </section>
 
-    <section id="kategorien" class="section" aria-labelledby="kat-title">
-      <h2 id="kat-title">Kategorien</h2>
-      <div class="cards">
-        <div class="card">Einzelteile</div>
-        <div class="card">Minifiguren</div>
-        <div class="card">Sets</div>
-        <div class="card">Technic</div>
+    <!-- Versand & Rahmenbedingungen (nach oben geholt) -->
+    <section class="section" aria-labelledby="terms-title">
+      <h2 id="terms-title">Versand & Rahmenbedingungen</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="ship-title">
+          <h3 id="ship-title"><span class="dot yellow"></span>Versand & Bearbeitung</h3>
+          <ul class="list">
+            <li><span class="check">✓</span> Versand ca. <strong>1–3 Werktage</strong> nach Zahlungseingang.</li>
+            <li><span class="check">✓</span> Nichtraucher-/tierfreier Haushalt.</li>
+            <li><span class="check">✓</span> Versand aus Deutschland; Versandart abhängig von Größe/Gewicht (mit oder ohne Sendungsverfolgung).</li>
+            <li><span class="check">✓</span> Wir verpacken in <strong>Druckverschlussbeuteln</strong>, aber nicht immer Lotrein.</li>
+            <li><span class="check">✓</span> Alle Positionen einer Bestellung werden <strong>in einer Sendung</strong> verschickt.</li>
+          </ul>
+        </article>
+        <article class="card" aria-labelledby="order-title">
+          <h3 id="order-title"><span class="dot red"></span>Bestellung & Service</h3>
+          <ul class="list">
+            <li><span class="check">✓</span> Preise & Verfügbarkeit gemäß unserer BrickLink‑Shopseite.</li>
+            <li><span class="check">✓</span> <strong>Versandkosten</strong> findest du in den <a href="https://store.bricklink.com/MoHawk87#/terms" target="_blank" rel="noopener">Terms</a> unter „Shipping“.</li>
+            <li><span class="check">✓</span> <strong>Keine Handling‑Fees.</strong></li>
+            <li><span class="check">✓</span> Bezahlung per <strong>PayPal</strong>.</li>
+            <li><span class="check">✓</span> <strong>Abholung</strong> nach vorheriger Rücksprache möglich.</li>
+          </ul>
+        </article>
       </div>
     </section>
 
-    <section id="hinweise" class="section" aria-labelledby="hinweise-title">
-      <div class="hinweise-wrapper">
-        <div class="hinweise">
-          <h2 id="hinweise-title">Hinweise zu gebrauchten Steinen</h2>
-          <ul>
-            <li>Unsere gebrauchten Steine werden maschinell gereinigt und befinden sich in gutem Zustand.</li>
-            <li>Elektrische Teile sind getestet und frei von Korrosion.</li>
-            <li>Bedruckte Elemente behalten ihre Farben und sind nicht ausgeblichen.</li>
-            <li>Empfindliche Teile sind vollständig, ohne Brüche oder Spannungsrisse.</li>
-            <li>Einige Formvarianten werden zur Preisoptimierung nicht separat aufgeführt (z. B. Plate Modified 1×2 with Clip).</li>
-            <li>Etwaige Mängel oder Beschädigungen werden immer klar angegeben.</li>
-            <li>Bitte beachten: Gebrauchsspuren wie kleine Kratzer können vorkommen und sind normal.</li>
+    <!-- Hinweise -->
+    <section class="section" aria-labelledby="hint-title">
+      <h2 id="hint-title">Hinweise</h2>
+      <div class="grid">
+        <article class="card" aria-labelledby="used-title">
+          <h3 id="used-title"><span class="dot red"></span>Gebrauchte Steine</h3>
+          <ul class="list">
+            <li><span class="zap">⚡</span> Unsere gebrauchten Steine werden maschinell gereinigt und befinden sich in gutem Zustand.</li>
+            <li><span class="zap">⚡</span> Elektrische Teile sind getestet und frei von Korrosion.</li>
+            <li><span class="zap">⚡</span> Bedruckte Elemente behalten ihre Farben und sind nicht ausgeblichen.</li>
+            <li><span class="zap">⚡</span> Empfindliche Teile sind vollständig, ohne Brüche oder Spannungsrisse.</li>
+            <li><span class="zap">⚡</span> Einige Formvarianten werden zur Preisoptimierung nicht separat aufgeführt.</li>
+            <li><span class="zap">⚡</span> Etwaige Mängel oder Beschädigungen werden immer klar angegeben.</li>
+            <li><span class="zap">⚡</span> Normale Gebrauchsspuren wie kleine Kratzer etc. können vorkommen, vor allem bei Steinen aus älteren Sets.</li>
           </ul>
-        </div>
-        <div class="hinweise">
-          <h2>Hinweise zu neuen Steinen</h2>
-          <ul>
-            <li>Neue Steine stammen direkt aus Sets und werden sorgfältig von Hand sortiert.</li>
-            <li>Durch Transport und Verpackung können leichte Oberflächenkratzer entstehen.</li>
-            <li>Auch hier werden manche Formvarianten zur Preisoptimierung nicht separat gelistet (z. B. Plate Modified 1×2 with Clip).</li>
+        </article>
+        <article class="card" aria-labelledby="new-title">
+          <h3 id="new-title"><span class="dot yellow"></span>Neue Steine</h3>
+          <ul class="list">
+            <li><span class="zap">⚡</span> Neue Steine stammen direkt aus Sets und werden sorgfältig von Hand sortiert.</li>
+            <li><span class="zap">⚡</span> Durch Transport und Verpackung können leichte Oberflächenkratzer entstehen.</li>
+            <li><span class="zap">⚡</span> Falls ein als "neu" geliefertes Teil fehlerhaft ist (starker Kratzer, Fehlguss): bitte kurz melden, wir finden eine Lösung.</li>
+            <li><span class="zap">⚡</span> Minifiguren sind in den meisten Fällen zusammengebaut in einem Druckverschlussbeutel.</li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
-    <section id="kontakt" class="section" aria-labelledby="kontakt-title">
+    <!-- Kontakt -->
+    <section class="section" aria-labelledby="kontakt-title">
       <h2 id="kontakt-title">Kontakt</h2>
-      <div class="contact">
-        <div class="card">E‑Mail: <a href="mailto:bricksunchained@gmail.com">bricksunchained@gmail.com</a></div>
-        <div class="card">Instagram: <a href="https://instagram.com/Bricks.Unchained" target="_blank" rel="noopener">@Bricks.Unchained</a></div>
+      <div class="k-grid">
+        <div class="k-card">E‑Mail: <a href="mailto:bricksunchained@gmail.com">bricksunchained@gmail.com</a></div>
+        <div class="k-card">Instagram: <a href="https://instagram.com/Bricks.Unchained" target="_blank" rel="noopener">@Bricks.Unchained</a></div>
       </div>
     </section>
   </main>
 
   <footer>
     <div class="container foot">
-      <div>© <span id="year"></span> Bricks Unchained · <a href="https://store.bricklink.com/MoHawk87#/terms">Terms</a></div>
-      <div>Made with ♥ for AFOLs</div>
+      <div>© <span id="year"></span> Bricks Unchained</div>
+      <div><a href="https://store.bricklink.com/MoHawk87#/terms" target="_blank" rel="noopener">Terms</a></div>
     </div>
   </footer>
 
   <script>
+    // Jahreszahl automatisch setzen
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
